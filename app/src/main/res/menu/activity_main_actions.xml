@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/searchicon"
+        android:title="world"
+        app:showAsAction="always"/>
+
+
+    <item android:id="@+id/world"
+        android:icon="@drawable/worldicon"
+        android:title="world"
+        app:showAsAction="always" />
+
+
+    <item android:id="@+id/chat"
+        android:icon="@drawable/chaticon"
+        android:title="chat"
+        app:showAsAction="always"  />
+
+    <item android:id="@+id/profile"
+        android:icon="@drawable/profileicon"
+        android:title="profile"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/logout"
+        android:icon="@drawable/profileicon"
+        android:title="profile"
+        app:showAsAction="always"/>
+
+
+</menu>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "44036796857",
+    "firebase_url": "https://younearme-cae27.firebaseio.com",
+    "project_id": "younearme-cae27",
+    "storage_bucket": "younearme-cae27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44036796857:android:35bc44b8bf3d4f02",
+        "android_client_info": {
+          "package_name": "com.example.younearme.younearme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44036796857-afrbpqr703b5653j9hebikrsh7tnd3km.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuboMx2wNAWYIh1cWD1r5TmWxaEtbHeHg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

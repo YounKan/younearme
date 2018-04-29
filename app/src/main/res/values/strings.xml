@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">YouNearMe</string>
+    <string name="facebook_app_id">1239557466180906</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="action_search">search</string>
+    <string name="action_location_found">location found</string>
+    <string name="action_refresh">refresh</string>
+    <string name="action_help">help</string>
+    <string name="action_check_updates">check updates</string>
+    <string name="search_hint">search hint</string>
+</resources>
