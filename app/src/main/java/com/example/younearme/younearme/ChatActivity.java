@@ -1,6 +1,7 @@
 package com.example.younearme.younearme;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -78,10 +79,10 @@ public class ChatActivity extends AppCompatActivity {
                     String userName = map.get("user").toString();
 
                     if(userName.equals(UserDetails.username)){
-                        addMessageBox("You:-\n" + message, 1);
+                        addMessageBox(UserDetails.nicknameUser+" : \n" + message, 1);
                     }
                     else{
-                        addMessageBox(UserDetails.chatWith + ":-\n" + message, 2);
+                        addMessageBox(UserDetails.nicknameChat + " : \n" + message, 2);
                     }
                 }
 
@@ -116,14 +117,15 @@ public class ChatActivity extends AppCompatActivity {
             lp2.weight = 1.0f;
 
             if(type == 1) {
-                lp2.gravity = Gravity.LEFT;
-                textView.setBackgroundResource(R.drawable.bubble_in);
-            }
-            else{
                 lp2.gravity = Gravity.RIGHT;
                 textView.setBackgroundResource(R.drawable.bubble_out);
             }
+            else{
+                lp2.gravity = Gravity.LEFT;
+                textView.setBackgroundResource(R.drawable.bubble_in);
+            }
             textView.setLayoutParams(lp2);
+            textView.setTypeface(Typeface.MONOSPACE);
             layout.addView(textView);
             scrollView.fullScroll(View.FOCUS_DOWN);
         }
@@ -142,7 +144,7 @@ public class ChatActivity extends AppCompatActivity {
                 startActivity(new Intent(ChatActivity.this, ChatwithActivity.class));
                 return true;
             case R.id.profile:
-                // help action
+                startActivity(new Intent(ChatActivity.this, UserActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

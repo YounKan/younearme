@@ -8,22 +8,45 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.younearme.younearme.ChatwithActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/register">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:fontFamily="@font/autour_one"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="My Chat"
+            android:textSize="30dp"
+            android:textColor="#c40000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="No users found!"
         android:id="@+id/noUsersText"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:fontFamily="@font/autour_one"/>
 
     <ListView
+        android:id="@+id/chatList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/chatList"
-        android:drawSelectorOnTop="false"/>
+        android:background="@color/white"
+        android:drawSelectorOnTop="false"
+        android:fontFamily="@font/autour_one" />
 
 
-
+    </LinearLayout>
 </LinearLayout>
 

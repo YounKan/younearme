@@ -36,7 +36,8 @@ public class SearchActivity extends AppCompatActivity {
     ArrayList<String> al = new ArrayList<>();
     ArrayList<String> alId = new ArrayList<>();
 
-    String city  ="", gender ="";
+    String city  ="";
+    String gender ="";
     String idChatwith;
 
     Button searchButton;
@@ -60,10 +61,10 @@ public class SearchActivity extends AppCompatActivity {
 
         genderSpinner = (Spinner) findViewById(R.id.genderselect);
 
-        genderArray.add("select gender");
+        genderArray.add("               select gender");
         genderArray.add("Female");
         genderArray.add("Male");
-        genderArray.add("other");
+        genderArray.add("Other");
 
         ArrayAdapter<String> adapterThai = new ArrayAdapter<String>(SearchActivity.this,
                 android.R.layout.simple_dropdown_item_1line, genderArray);
@@ -99,12 +100,15 @@ public class SearchActivity extends AppCompatActivity {
         searchList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                UserDetails.chatWith = al.get(position);
-                idChatwith = alId.get(position);
+                UserDetails.chatWith = alId.get(position);
+                UserDetails.nicknameChat =al.get(position);
                 DatabaseReference reference = FirebaseDatabase.getInstance()
                         .getReferenceFromUrl("https://younearme-cae27.firebaseio.com/chatwith/"+UserDetails.username);
+                DatabaseReference reference1 = FirebaseDatabase.getInstance()
+                        .getReferenceFromUrl("https://younearme-cae27.firebaseio.com/chatwith/"+UserDetails.chatWith);
                 // reference.child(UserDetails.username).child("Idchaiwith").setValue(idChatwith);
-                reference.child(idChatwith).child("chatwith").setValue(UserDetails.chatWith);
+                reference.child(UserDetails.chatWith).child("chatwith").setValue(UserDetails.chatWith);
+                reference1.child(UserDetails.username).child("chatwith").setValue(UserDetails.username);
 
                 startActivity(new Intent(SearchActivity.this, ChatActivity.class));
 
@@ -175,7 +179,6 @@ public class SearchActivity extends AppCompatActivity {
                 key = i.next().toString();
 
                 if(!key.equals(UserDetails.username)) {
-
                     if(obj.getJSONObject(key).getString("gender").equals(gender)&&obj.getJSONObject(key).getString("city").equals(city)){
                         String nickname = obj.getJSONObject(key).getString("nickname");
                         al.add(nickname);
@@ -200,7 +203,7 @@ public class SearchActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(totalUsers <=1){
+        if(totalUsers <1){
             noUsersText.setVisibility(View.VISIBLE);
             searchList.setVisibility(View.GONE);
         }

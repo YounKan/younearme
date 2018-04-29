@@ -124,7 +124,7 @@ public class UserActivity extends AppCompatActivity {
                                 reference.child(UserDetails.username).child("gender").setValue(gender);
                                 reference.child(UserDetails.username).child("birthday").setValue(birthday);
                                 reference.child(UserDetails.username).child("city").setValue(city);
-                                Toast.makeText(UserActivity.this, "registration successful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(UserActivity.this, "Update successful", Toast.LENGTH_LONG).show();
                             }
                             else {
                                 try {
@@ -136,9 +136,9 @@ public class UserActivity extends AppCompatActivity {
                                         reference.child(UserDetails.username).child("gender").setValue(gender);
                                         reference.child(UserDetails.username).child("birthday").setValue(birthday);
                                         reference.child(UserDetails.username).child("city").setValue(city);
-                                        Toast.makeText(UserActivity.this, "registration successful", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(UserActivity.this, "Update successful", Toast.LENGTH_LONG).show();
                                     } else {
-                                        Toast.makeText(UserActivity.this, "username already exists", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(UserActivity.this, "Update Fail", Toast.LENGTH_LONG).show();
                                     }
 
                                 } catch (JSONException e) {

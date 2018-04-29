@@ -79,12 +79,20 @@ public class WorldActivity extends AppCompatActivity {
     usersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            UserDetails.chatWith = al.get(position);
-            idChatwith = alId.get(position);
+            UserDetails.chatWith = alId.get(position);
+            UserDetails.nicknameChat = al.get(position);
             DatabaseReference reference = FirebaseDatabase.getInstance()
                     .getReferenceFromUrl("https://younearme-cae27.firebaseio.com/chatwith/"+UserDetails.username);
            // reference.child(UserDetails.username).child("Idchaiwith").setValue(idChatwith);
-            reference.child(idChatwith).child("chatwith").setValue(UserDetails.chatWith);
+            reference.child(UserDetails.chatWith).child("chatwith").setValue(UserDetails.chatWith);
+            reference.child(UserDetails.chatWith).child("nickname").setValue(UserDetails.nicknameChat);
+
+            DatabaseReference reference1 = FirebaseDatabase.getInstance()
+                    .getReferenceFromUrl("https://younearme-cae27.firebaseio.com/chatwith/"+UserDetails.chatWith);
+            // reference.child(UserDetails.username).child("Idchaiwith").setValue(idChatwith);
+            reference1.child(UserDetails.username).child("chatwith").setValue(UserDetails.username);
+            reference1.child(UserDetails.username).child("nickname").setValue(UserDetails.nicknameUser);
+
 
             startActivity(new Intent(WorldActivity.this, ChatActivity.class));
 

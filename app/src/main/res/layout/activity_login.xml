@@ -19,7 +19,7 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="297dp"
-        android:layout_height="389dp"
+        android:layout_height="438dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,43 +47,49 @@
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:ems="10"
-                android:hint="Name"
+                android:hint="Username"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorAccent"
-                android:layout_marginBottom="20dp"/>
+                android:fontFamily="@font/autour_one"/>
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:textColor="@android:color/holo_blue_dark"
-                android:layout_marginBottom="20dp"/>
+                android:fontFamily="@font/autour_one"/>
 
             <Button
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
                 android:text="LOGIN"
-                android:textColor="@android:color/holo_orange_dark"
-                android:layout_marginBottom="20dp"/>
+                android:textColor="#ffffff"
+                android:fontFamily="@font/autour_one"
+                android:textSize="30dp"/>
 
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/login_button"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp" />
 
             <Button
                 android:id="@+id/register"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="57dp"
+                android:fontFamily="@font/autour_one"
                 android:text="REGISTER"
-                android:textColor="#ec1cff"/>
+                android:textColor="#ffffff"
+                android:textSize="30dp" />
 
         </LinearLayout>
 

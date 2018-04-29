@@ -106,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                                     } else if (obj.getJSONObject(user).getString("password").equals(pass)) {
                                         UserDetails.username = user;
                                         UserDetails.password = pass;
+                                        UserDetails.nicknameUser = obj.getJSONObject(user).getString("nickname");
                                        startActivity(new Intent(LoginActivity.this, WorldActivity.class));
                                     } else {
                                         Toast.makeText(LoginActivity.this, "incorrect password", Toast.LENGTH_LONG).show();
@@ -169,21 +170,28 @@ public class LoginActivity extends AppCompatActivity {
 
                         DatabaseReference reference = FirebaseDatabase.getInstance()
                                 .getReferenceFromUrl("https://younearme-cae27.firebaseio.com/users");
-
+                        String cap = genderF.substring(0, 1).toUpperCase() + genderF.substring(1);
                         if (s.equals("null")) {
                             reference.child(userF).child("nickname").setValue(nameF);
-                            reference.child(userF).child("gender").setValue(genderF);
+                            reference.child(userF).child("gender").setValue(cap);
                             reference.child(userF).child("birthday").setValue(birthdayF);
+                            reference.child(userF).child("password").setValue("");
+                            reference.child(userF).child("city").setValue("");
                         } else {
                             try {
                                 JSONObject obj = new JSONObject(s);
 
-                                if (!obj.has(user))
+                                if (!obj.has(user)) {
+
                                     reference.child(userF).child("nickname").setValue(nameF);
-                                    reference.child(userF).child("gender").setValue(genderF);
+                                    reference.child(userF).child("gender").setValue(cap);
                                     reference.child(userF).child("birthday").setValue(birthdayF);
+                                    reference.child(userF).child("password").setValue("");
+                                    reference.child(userF).child("city").setValue("");
+                                }
                                 UserDetails.username = userF;
                                startActivity(new Intent(LoginActivity.this, WorldActivity.class));
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

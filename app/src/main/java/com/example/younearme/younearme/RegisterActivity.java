@@ -122,6 +122,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 reference.child(user).child("birthday").setValue(birthday);
                                 reference.child(user).child("city").setValue(city);
                                 Toast.makeText(RegisterActivity.this, "registration successful", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             }
                             else {
                                 try {
@@ -134,6 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         reference.child(user).child("birthday").setValue(birthday);
                                         reference.child(user).child("city").setValue(city);
                                         Toast.makeText(RegisterActivity.this, "registration successful", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                     } else {
                                         Toast.makeText(RegisterActivity.this, "username already exists", Toast.LENGTH_LONG).show();
                                     }

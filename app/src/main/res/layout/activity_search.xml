@@ -8,51 +8,51 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.younearme.younearme.SearchActivity"
-    android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/searchbg">
 
-    <Spinner
-        android:id="@+id/cityselect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
-    <Spinner
-        android:id="@+id/genderselect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
-
-
-    <Button
-        android:id="@+id/searchbtn"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="search"
-        android:textColor="#ec1cff" />
-</LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="200dp">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="No users found!"
-        android:id="@+id/noUsersText"
-        android:visibility="gone"/>
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-    <ListView
-        android:id="@+id/searchList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawSelectorOnTop="false"
-        android:paddingTop="50dp" />
+        <Spinner
+            android:id="@+id/cityselect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Spinner
+            android:id="@+id/genderselect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+
+        <Button
+            android:id="@+id/searchbtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="search"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/autour_one"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/noUsersText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No users found!"
+            android:visibility="gone" />
+
+        <ListView
+            android:id="@+id/searchList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="false"
+            android:paddingTop="100dp" />
     </LinearLayout>
 
 

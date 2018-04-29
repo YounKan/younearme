@@ -34,6 +34,7 @@ public class ChatwithActivity extends AppCompatActivity {
     ListView chatList;
     TextView noUsersText;
     ArrayList<String> al = new ArrayList<>();
+    ArrayList<String> alId = new ArrayList<>();
     int totalUsers = 0;
     ProgressDialog pd;
 
@@ -68,7 +69,8 @@ public class ChatwithActivity extends AppCompatActivity {
         chatList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                UserDetails.chatWith = al.get(position);
+                UserDetails.chatWith = alId.get(position);
+                UserDetails.nicknameChat=al.get(position);
                 startActivity(new Intent(ChatwithActivity.this, ChatActivity.class));
 
             }
@@ -87,8 +89,9 @@ public class ChatwithActivity extends AppCompatActivity {
             while(i.hasNext()){
                 key = i.next().toString();
 
-                    String nickname = obj.getJSONObject(key).getString("chatwith");
+                    String nickname = obj.getJSONObject(key).getString("nickname");
                     al.add(nickname);
+                    alId.add(key);
 
 
                 totalUsers++;
